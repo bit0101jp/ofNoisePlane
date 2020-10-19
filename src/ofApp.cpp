@@ -38,19 +38,6 @@ void ofApp::setup() {
 }
 
 void ofApp::update() {
-  for (int x = 0; x < TILES_X; x++){
-    for (int y = 0; y < TILES_Y; y++){
-      // repeat for the number of vertices
-      for (int j = 0; j < mesh[x+y*TILES_X].getVertices().size(); j++) {
-        // extract the coordinates of the vertices
-        glm::vec3 pos = mesh[x+y*TILES_X].getVertices()[j];
-        // update Z coordinates with random numbers
-        pos.z = ofRandom(-10, 0);
-        mesh[x + y * TILES_X].setVertex(j, pos);
-      }
-    }
-  }
-
   for (int i = 0; i< TILES_X * TILES_Y; i++){
     mutant[i] = false;
   }
